@@ -54,6 +54,31 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default</id>
+						<phase>install</phase>
+						<goals>
+							<goal>build</goal>
+							<!--<goal>push</goal>-->
+						</goals>
+						<configuration>
+							<!--<repository>sagdeshm1/test</repository>-->
+							<repository>docker.io/sagdeshm1/ms</repository>
+							<tag>${project.version}</tag>
+							<pullNewerImage>false</pullNewerImage>
+							<!--<buildArgs>-->
+							<!--<jar_file>${project.build.finalName}.jar</jar_file>-->
+							<!--</buildArgs>-->
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 

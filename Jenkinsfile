@@ -22,7 +22,6 @@ stage('Deploy Image') {
   steps{
     script {
       docker.withRegistry( '', registryCredential ) {
-      dockerImage.build()
         dockerImage.push()
       }
     }

@@ -7,7 +7,7 @@ environment {
     withMaven(maven:'mvn') {
 
         stage('Checkout') {
-            git url: 'https://github.com/msmb4u/EquityTradePortfolio.git', credentialsId: 'github-credentials', branch: 'master'
+            git url: 'https://github.com/sdeshmukh01/stock-aggregator-service.git', credentialsId: 'github-credentials', branch: 'master'
         }
 
         stage('Build') {
